@@ -1,4 +1,4 @@
-<h1>Fashion and its History</h1>
+<h1>Fashion and its History: Does it repeat itself?</h1>
 
 <h3> During my Major Studio 2 Thesis work I am hoping to visualize fashion over time in order to come to a conclusion as to whether or not fashion trends are in fact cyclical or impacted by historical events.</h3>
 
@@ -9,7 +9,7 @@
 
 <ol>
   <li>Visualizing fashion trends over time</li>
-  <li>Pattern on when and why certain fashion trends re-emerge</li>
+  <li>Identifying a pattern surrounding when and why certain fashion trends re-emerge</li>
   <li>The audience will be able to conclude on how historical events impact fashion trends and culture</li>
 </ol>
 
