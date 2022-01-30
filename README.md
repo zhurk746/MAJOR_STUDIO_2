@@ -6,6 +6,18 @@
 
 <img src='Thesis Mind Map.png' title='Thesis Mind Map'>
 
-*Visualizing fashion trends over time
-*Understanding if there is a pattern on when and why certain fashion trends re-emerg
-*the audience will be able to conclude on how historical events impact fashion trends and culture
+
+<ol>
+  <li>Visualizing fashion trends over time</li>
+  <li>Pattern on when and why certain fashion trends re-emerge</li>
+  <li>The audience will be able to conclude on how historical events impact fashion trends and culture</li>
+</ol>
+
+<h3>Links </h3>
+[Historical Trends that redefined fashion--compile data](https://www.tlnint.com/keeping-up-with-trends-historical-events-that-redefined-the-face-of-fashion/)
+[Fashion by the Decade](https://www.whowhatwear.com/fashion-by-the-decade/slide16)
+[Historical Event and Fashion](https://time.com/4978502/mod-fashion-1960s/)
+[How Fashion ha Changed](https://www.thepeoplehistory.com/fashions.html)
+[Fashion History Timeline](https://fashionhistory.fitnyc.edu/source-database/)
+[Articles extracted from a Fashion Blog](https://data.world/promptcloud/articles-extracted-from-a-fashion-blog)
+[2020 Amazon Fashion Products](https://data.world/promptcloud/fashion-products-on-amazon-com)
