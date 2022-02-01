@@ -1,16 +1,26 @@
 <h1>Fashion and its History: Does it repeat itself?</h1>
 
-<h3> During my Major Studio 2 Thesis work I am hoping to visualize fashion over time in order to come to a conclusion as to whether or not fashion trends are in fact cyclical or impacted by historical events.</h3>
+<h2>During my Major 2 Studio Thesis work... </h2>
+<h3>I will visualize the history of fashion in order to helps viewers identify patterns in fashion trends and styles so that they can better understand what drives changes in fashion culture and use this information to predict future trends.</h3>
 
 <p>The mind map below details some of the questions I have begun to explore to begin my thesis work.</p>
 
-<img src='Thesis Mind Map.png' title='Thesis Mind Map'>
+<img src='Thesis Mind Map mural.png' title='Thesis Mind Map'>
 
-
+<h2>Outline of Main Concepts and Narrative:</h2>
 <ol>
-  <li>Visualizing fashion trends over time</li>
-  <li>Identifying a pattern surrounding when and why certain fashion trends re-emerge</li>
+  <li>Visualize fashion trends over time</li>
+  <li>Identify a pattern surrounding when and why certain fashion trends re-emerge</li>
+  <li>Identify similarities and differences between styles/trends of different time periods </li>
   <li>The audience will be able to conclude on how historical events impact fashion trends and culture</li>
+</ol>
+
+<h2>Outline of steps toward final coded visualization:</h2>
+<ol>
+<li>Aggregate a dataset using literature and context and supplement by drawing connections between certain styles</li>
+<li>Debug and iterate</li>
+<li>Explore abstract ways to present data and connections between fashion trends of different time periods (i.e. not a timeline but a potential network diagram?)</li>
+<li>Explore css/html/js design that would best supplement the topic</li>
 </ol>
 
 <h3>Links </h3>
