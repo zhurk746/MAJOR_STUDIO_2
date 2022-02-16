@@ -1,6 +1,6 @@
-#Exercise 4- Form
+# Exercise 4- Form
 
-##Here are a few initial sketches of what I envision my Major Studio 2 Thesis Work visual piece becoming. 
+## Here are a few initial sketches of what I envision my Major Studio 2 Thesis Work visual piece becoming. 
 
 <p>I envision my final piece to be consist of several different visualizations and have a scrollytelling element
 that walks the user of the webpage through different conclusions regarding the emergence of a pattern
