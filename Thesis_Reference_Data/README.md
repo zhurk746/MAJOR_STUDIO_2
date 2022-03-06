@@ -8,6 +8,8 @@ Kim, Eundeok, Ann Marie Fiore, and Hyejeong Kim. 2011. Fashion Trends : Analys
 
 Riello, Giorgio. 2020. Back in Fashion : Western Fashion from the Middle Ages to the Present. New Haven, CT : Yale University Press.
 
+Vinken, Barbara. 2005. Fashion Zeitgeist : Trends and Cycles in the Fashion System. Oxford %3B New York: Oxford; New York : Berg.
+
 Welters, Linda, and Abby Lillethun. 2018. Fashion History : A Global View. London, UK; New York, NY, USA : Bloomsbury Academic, An imprint of Bloomsbury Publishing Plc.
 
 <h2>Call Numbers and Floors</h2>
