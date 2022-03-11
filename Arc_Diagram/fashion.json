@@ -1,0 +1,968 @@
+[
+  {
+    "Name": "bell bottoms",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 98
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 227
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 184
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 83
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 37
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 26
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 34
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 82
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 42
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 64
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 154
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 90
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 32
+  },
+  {
+    "Name": "bell bottoms",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 3
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 5
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 11
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 47
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 32
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 65
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 87
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 78
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 280
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 75
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 103
+  },
+  {
+    "Name": "shift dress",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 348
+  },
+  {
+    "Name": "shift dress",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 380
+  },
+  {
+    "Name": "shift dress",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 225
+  },
+  {
+    "Name": "shift dress",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 30
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 56
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 124
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 38
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 32
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 88
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 73
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 119
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 73
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 115
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 85
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 26
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 23
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 14
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 1314
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 2683
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 1785
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 1767
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 1637
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 1242
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 819
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 1195
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 1561
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 2069
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 1673
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 1448
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 741
+  },
+  {
+    "Name": "off the shoulder",
+    "Source": 2020,
+    "End Date": 2020,
+    "Target": 2021,
+    "Count": 73
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 1
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 1
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 0
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 9
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 5
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 20
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 56
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 26
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 83
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 47
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 104
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 51
+  },
+  {
+    "Name": "high waisted pants",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 2
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 3
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 6
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 15
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 47
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 52
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 6
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 15
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 21
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 30
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 43
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 77
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 98
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 36
+  },
+  {
+    "Name": "low rise jeans",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 4
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 36
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 278
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 275
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 200
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 148
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 136
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 66
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 122
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 113
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 167
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 172
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 130
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 54
+  },
+  {
+    "Name": "shoulder pads",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 1
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 63
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 9
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 58
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 116
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 109
+  },
+  {
+    "Name": "mini-skirt",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 34
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 3
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 11
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 12
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 42
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 49
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 38
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 53
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 118
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 35
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 87
+  },
+  {
+    "Name": "cutouts",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 152
+  },
+  {
+    "Name": "cutouts",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 215
+  },
+  {
+    "Name": "cutouts",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 109
+  },
+  {
+    "Name": "cutouts",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 6
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 1
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 3
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 29
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 11
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 17
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 2000,
+    "End Date": 2001,
+    "Target": 2002,
+    "Count": 41
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 37
+  },
+  {
+    "Name": "tie-dye",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 6
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1890,
+    "End Date": 1899,
+    "Target": 1900,
+    "Count": 104
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1900,
+    "End Date": 1909,
+    "Target": 1910,
+    "Count": 159
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1910,
+    "End Date": 1919,
+    "Target": 1920,
+    "Count": 340
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1920,
+    "End Date": 1929,
+    "Target": 1930,
+    "Count": 111
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1930,
+    "End Date": 1939,
+    "Target": 1940,
+    "Count": 217
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1940,
+    "End Date": 1949,
+    "Target": 1950,
+    "Count": 252
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1950,
+    "End Date": 1959,
+    "Target": 1960,
+    "Count": 287
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1960,
+    "End Date": 1969,
+    "Target": 1970,
+    "Count": 164
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1970,
+    "End Date": 1979,
+    "Target": 1980,
+    "Count": 202
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1980,
+    "End Date": 1989,
+    "Target": 1990,
+    "Count": 132
+  },
+  {
+    "Name": "corduroy",
+    "Source": 1990,
+    "End Date": 1999,
+    "Target": 2000,
+    "Count": 65
+  },
+  {
+    "Name": "corduroy",
+    "Source": 2000,
+    "End Date": 2009,
+    "Target": 2010,
+    "Count": 113
+  },
+  {
+    "Name": "corduroy",
+    "Source": 2010,
+    "End Date": 2019,
+    "Target": 2020,
+    "Count": 29
+  },
+  {
+    "Name": "corduroy",
+    "Source": 2020,
+    "End Date": 2029,
+    "Target": 2030,
+    "Count": 3
+  }
+]
