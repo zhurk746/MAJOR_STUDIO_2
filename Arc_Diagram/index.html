@@ -44,7 +44,8 @@ d3.json("fashion.json", function(data) {
     });
      links.push({
          source: linkSource,
-         target: linkTarget
+         target: linkTarget,
+         size: countVogue,
     })   ;
     });
     
@@ -59,7 +60,7 @@ d3.json("fashion.json", function(data) {
   var allNodes = data.nodes.map(function(d){return d.id})
 
   // List of groups
-  var allGroups = data.nodes.map(function(d){return d.id})
+  var allGroups = data.links.map(function(d){return d.size})
   allGroups = [...new Set(allGroups)]
 
   // A color scale for groups:
@@ -96,14 +97,14 @@ d3.json("fashion.json", function(data) {
       end = x(d.target)      // X position of end node
       return ['M', start, height-30,    // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
         'A',                            // This means we're gonna build an elliptical arc
-        (start - end)/2, ',',    // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
-        (start - end)/2, 0, 0, ',',
+        (start-end)/2, ',',    // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
+        (start-end)/2, 0, 0, ',',
         start < end ? 1 : 0, end, ',', height-30] // We always want the arc on top. So if end is before start, putting 0 here turn the arc upside down.
         .join(' ');
     })
     .style("fill", 'none')
     .attr("stroke", 'black')
-    .style("stroke-width", 20)
+    .style("stroke-width", 1)
 
   // Add the circle for the nodes
   var nodesDraw = svg
@@ -138,13 +139,13 @@ d3.json("fashion.json", function(data) {
   nodesDraw
     .on('mouseover', function (d) {
       // Highlight the nodes: every node is green except of him
-      nodes
+      nodesDraw
         .style('opacity', .2)
       d3.select(this)
         .style('opacity', 1)
       // Highlight the connections
-      links
-        .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? color(d.grp) : '#b8b8b8';})
+      linksDraw
+        .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? color(d.n) : 'purple';})
         .style('stroke-opacity', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 1 : .2;})
         .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
       labels
@@ -153,8 +154,8 @@ d3.json("fashion.json", function(data) {
 
     })
     .on('mouseout', function (d) {
-      nodes.style('opacity', 1)
-      links
+      nodesDraw.style('opacity', 1)
+      linksDraw
         .style('stroke', 'grey')
         .style('stroke-opacity', .8)
         .style('stroke-width', '1')
