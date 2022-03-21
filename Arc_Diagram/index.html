@@ -24,7 +24,7 @@ var svg = d3.select("#my_dataviz")
 
 // Read dummy data
 let fashionData;
-d3.json("fashion.json", function(data) {
+d3.json("eleven_trends.json", function(data) {
     
     fashionData=data;
     //console.log(fashionData);
@@ -35,7 +35,7 @@ d3.json("fashion.json", function(data) {
       let nodeName=n.Name;
       let linkSource=n.Source;
       let linkTarget=n.Target;
-      let countVogue=n.Count;
+      let countVogue=n.Vogue;
     nodes.push({
         id: nodeId,
         name: nodeName,
@@ -76,7 +76,9 @@ d3.json("fashion.json", function(data) {
   // A linear scale to position the nodes on the X axis
   var x = d3.scalePoint()
     .range([0, width])
-    .domain(allNodes)
+    .domain(allNodes.sort(function(a,b) { return a - b }))
+    
+    console.log(x.domain());
 
   // In my input data, links are provided between nodes -id-, NOT between node names.
   // So I have to do a link between this id and the name
@@ -109,17 +111,13 @@ d3.json("fashion.json", function(data) {
   // Add the circle for the nodes
   var nodesDraw = svg
     .selectAll("mynodes")
-    .data(data.nodes.sort(function(a,b) { return +b.n - +a.n }))
+    .data(data.nodes.sort(function(a,b) { return +b.id - +a.id }))
     .enter()
     .append("circle")
       .attr("cx", function(d){ return(x(d.id))})
       .attr("cy", height-30)
       .attr("r", 10)
-      .style("fill", function(d){ 
-          if (d.n >= 100) {return 'none'}
-          else {return 'green'}
-      }
-    )
+      .style("fill", "grey")
       .attr("stroke", "black")
 
   // And give them a label
@@ -137,7 +135,7 @@ d3.json("fashion.json", function(data) {
 
   // Add the highlighting functionality
   nodesDraw
-    .on('mouseover', function (d) {
+    .on('mouseenter', function (d) {
       // Highlight the nodes: every node is green except of him
       nodesDraw
         .style('opacity', .2)
@@ -145,22 +143,23 @@ d3.json("fashion.json", function(data) {
         .style('opacity', 1)
       // Highlight the connections
       linksDraw
-        .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? color(d.n) : 'purple';})
+        .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? color(d.name) : '#b8b8b8';})
         .style('stroke-opacity', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 1 : .2;})
         .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
       labels
         .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
         .attr("y", function(label_d){ return label_d.name === d.name ? 10 : 0 } )
+        .text(function(d){ return(d.id + `-` + d.name)} )
 
     })
     .on('mouseout', function (d) {
-      nodesDraw.style('opacity', 1)
+     nodesDraw.style('opacity', 1)
       linksDraw
         .style('stroke', 'grey')
         .style('stroke-opacity', .8)
-        .style('stroke-width', '1')
-      labels
-        .style("font-size", 6 )
+        .style('stroke-width', '1') 
+      labels 
+        .style("font-size", 24 )
 
     })
 });
