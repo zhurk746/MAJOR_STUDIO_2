@@ -160,6 +160,7 @@ d3.json("eleven_trends.json", function(data) {
         .style('stroke-width', '1') 
       labels 
         .style("font-size", 24 )
+        .text(function(d){return d.id})
 
     })
 });
