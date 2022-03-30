@@ -24,7 +24,7 @@ var svg = d3.select("#my_dataviz")
 
 // Read dummy data
 let fashionData;
-d3.json("eleven_trends.json", function(data) {
+d3.json("twenty_trends.json", function(data) {
     
     fashionData=data;
     //console.log(fashionData);
@@ -65,7 +65,7 @@ d3.json("eleven_trends.json", function(data) {
 
   // A color scale for groups:
  var color = d3.scaleOrdinal()
-    .domain(allGroups);
+    .domain(allGroups)
     //.range(d3.schemeSet3);
 
   // A linear scale for node size
@@ -100,7 +100,7 @@ d3.json("eleven_trends.json", function(data) {
       return ['M', start, height-30,    // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
         'A',                            // This means we're gonna build an elliptical arc
         (start-end)/2, ',',    // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
-        (start-end)/2, 0, 0, ',',
+        (start-end)/2*(d.size/920), 0, 0, ',', //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data 
         start < end ? 1 : 0, end, ',', height-30] // We always want the arc on top. So if end is before start, putting 0 here turn the arc upside down.
         .join(' ');
     })
@@ -117,7 +117,9 @@ d3.json("eleven_trends.json", function(data) {
       .attr("cx", function(d){ return(x(d.id))})
       .attr("cy", height-30)
       .attr("r", 10)
-      .style("fill", "grey")
+      .style("fill", function (d) { if (d.name=='bell bottoms') {return 'red'}
+        else {return 'grey'}
+      })
       .attr("stroke", "black")
 
   // And give them a label
@@ -161,6 +163,8 @@ d3.json("eleven_trends.json", function(data) {
       labels 
         .style("font-size", 24 )
         .text(function(d){return d.id})
+        .style("text-anchor", "end")
+        .attr("transform", function(d){ return( "translate(" + (x(d.id)) + "," + (height-15) + ")rotate(-45)")})
 
     })
 });
