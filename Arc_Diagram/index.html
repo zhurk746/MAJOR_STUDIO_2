@@ -100,7 +100,7 @@ d3.json("twenty_trends.json", function(data) {
       return ['M', start, height-30,    // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
         'A',                            // This means we're gonna build an elliptical arc
         (start-end)/2, ',',    // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
-        (start-end)/2*(d.size/920), 0, 0, ',', //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data 
+        (start-end)/2*(d.size/306), 0, 0, ',', //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data 
         start < end ? 1 : 0, end, ',', height-30] // We always want the arc on top. So if end is before start, putting 0 here turn the arc upside down.
         .join(' ');
     })
