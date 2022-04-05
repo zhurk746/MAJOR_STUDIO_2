@@ -107,7 +107,7 @@ d3.json("twenty_trends.json", function(data) {
     })
     .style("fill", 'none')
     .attr("stroke", function (d) { if (d.trend=='bell bottoms') {return 'red'}
-        else if (d.trend=='cordury') {return 'blue'}
+        else if (d.trend=='corduroy') {return 'blue'}
         else if (d.trend=='cutouts') {return 'green'}
         else if (d.trend=='high waisted pants') {return 'purple'}
         else if (d.trend=='low rise jeans') {return 'orange'}
@@ -141,7 +141,7 @@ d3.json("twenty_trends.json", function(data) {
       .attr("r", 10)
       .style("fill", 'white')
       .attr("stroke", "black")
-      .style("stroke-width", 2.5)
+      .style("stroke-width", '2.5')
 
   // And give them a label
   var labels = svg
@@ -178,9 +178,30 @@ d3.json("twenty_trends.json", function(data) {
     .on('mouseout', function (d) {
      nodesDraw.style('opacity', 1)
       linksDraw
-        .style('stroke', 'grey')
-        .style('stroke-opacity', .8)
-        .style('stroke-width', '1') 
+        .style("fill", 'none')
+        .attr("stroke", function (d) { if (d.trend=='bell bottoms') {return 'red'}
+        else if (d.trend=='corduroy') {return 'blue'}
+        else if (d.trend=='cutouts') {return 'green'}
+        else if (d.trend=='high waisted pants') {return 'purple'}
+        else if (d.trend=='low rise jeans') {return 'orange'}
+        else if (d.trend=='mini-skirt') {return 'pink'}
+        else if (d.trend=='off the shoulder') {return 'turquoise'}
+        else if (d.trend=='plaid flannel shirt') {return '#77eb34'}
+        else if (d.trend=='shift dress'){return '#d034eb'}
+        else if (d.trend=='shoulder pads'){return '#a30361'}
+        else if (d.trend=='tie-dye'){return '#03a36b'}
+        else if (d.trend=='platform shoes'){return '#110559'}
+        else if (d.trend=='leather jacket'){return '#333045'}
+        else if (d.trend=='sequin'){return '#e69eda'}
+        else if (d.trend=='peplum shirt'){return '#f7f439'}
+        else if (d.trend=='fringe detail'){return '#9bb2c9'}
+        else if (d.trend=='patchwork'){return '#8a4968'}
+        else if (d.trend=='polka dot'){return '#db6069'}
+        else if (d.trend=='balloon sleeves'){return '#214d16'}
+        else if (d.trend=='acid wash'){return '#7d9695'}
+        else {}
+      })
+      .style('stroke-width', '2.5') 
       labels 
         .style("font-size", 24 )
         .text(function(d){return d.id})
