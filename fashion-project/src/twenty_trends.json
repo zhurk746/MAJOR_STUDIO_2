@@ -1,0 +1,770 @@
+[
+  {
+    "Name": "bell bottoms",
+    "Vogue": 98,
+    "Source": 1890,
+    "Target": 1900
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 227,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 184,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 83,
+    "Source": 1920,
+    "Target": 1960
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 82,
+    "Source": 1960,
+    "Target": 1990
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 154,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "bell bottoms",
+    "Vogue": 90,
+    "Source": 2000,
+    "Target": 1900
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 159,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 340,
+    "Source": 1910,
+    "Target": 1930
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 217,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 252,
+    "Source": 1940,
+    "Target": 1950
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 287,
+    "Source": 1950,
+    "Target": 1960
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 164,
+    "Source": 1960,
+    "Target": 1970
+  },
+  {
+    "Name": "corduroy",
+    "Vogue": 202,
+    "Source": 1970,
+    "Target": 1930
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 49,
+    "Source": 1930,
+    "Target": 1950
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 53,
+    "Source": 1950,
+    "Target": 1960
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 118,
+    "Source": 1960,
+    "Target": 1980
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 87,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 152,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 215,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "cutouts",
+    "Vogue": 109,
+    "Source": 2010,
+    "Target": 1960
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 56,
+    "Source": 1960,
+    "Target": 1970
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 26,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 83,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 47,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 104,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "high waisted pants",
+    "Vogue": 51,
+    "Source": 2010,
+    "Target": 1920
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 47,
+    "Source": 1920,
+    "Target": 1930
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 52,
+    "Source": 1930,
+    "Target": 1970
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 30,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 43,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 77,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 98,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "low rise jeans",
+    "Vogue": 36,
+    "Source": 2010,
+    "Target": 1960
+  },
+  {
+    "Name": "mini-skirt",
+    "Vogue": 63,
+    "Source": 1960,
+    "Target": 1990
+  },
+  {
+    "Name": "mini-skirt",
+    "Vogue": 116,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "mini-skirt",
+    "Vogue": 109,
+    "Source": 2000,
+    "Target": 1900
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 2683,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 1785,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 1767,
+    "Source": 1920,
+    "Target": 1930
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 1637,
+    "Source": 1930,
+    "Target": 1970
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 1561,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 2069,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "off the shoulder",
+    "Vogue": 1673,
+    "Source": 1990,
+    "Target": 1900
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Vogue": 124,
+    "Source": 1900,
+    "Target": 1930
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Vogue": 88,
+    "Source": 1930,
+    "Target": 1950
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Vogue": 119,
+    "Source": 1950,
+    "Target": 1970
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Vogue": 115,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "plaid flannel shirt",
+    "Vogue": 85,
+    "Source": 1980,
+    "Target": 1940
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 87,
+    "Source": 1940,
+    "Target": 1950
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 78,
+    "Source": 1950,
+    "Target": 1960
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 280,
+    "Source": 1960,
+    "Target": 1980
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 103,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 348,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 380,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "shift dress",
+    "Vogue": 225,
+    "Source": 2010,
+    "Target": 1900
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 278,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 275,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 200,
+    "Source": 1920,
+    "Target": 1930
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 148,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 136,
+    "Source": 1940,
+    "Target": 1980
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 167,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "shoulder pads",
+    "Vogue": 172,
+    "Source": 1990,
+    "Target": 1970
+  },
+  {
+    "Name": "tie-dye",
+    "Vogue": 29,
+    "Source": 1970,
+    "Target": 1990
+  },
+  {
+    "Name": "tie-dye",
+    "Vogue": 17,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "tie-dye",
+    "Vogue": 41,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "tie-dye",
+    "Vogue": 37,
+    "Source": 2010,
+    "Target": 1930
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 59,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 144,
+    "Source": 1940,
+    "Target": 1950
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 55,
+    "Source": 1950,
+    "Target": 1970
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 62,
+    "Source": 1970,
+    "Target": 1990
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 174,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 479,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "platform shoes",
+    "Vogue": 218,
+    "Source": 2010,
+    "Target": 1930
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 573,
+    "Source": 1930,
+    "Target": 1950
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 616,
+    "Source": 1950,
+    "Target": 1960
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 556,
+    "Source": 1960,
+    "Target": 1980
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 856,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 716,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 959,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "leather jacket",
+    "Vogue": 594,
+    "Source": 2010,
+    "Target": 1930
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 210,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 424,
+    "Source": 1940,
+    "Target": 1960
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 150,
+    "Source": 1960,
+    "Target": 1980
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 295,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 267,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 368,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "sequin",
+    "Vogue": 151,
+    "Source": 2010,
+    "Target": 1910
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 50,
+    "Source": 1910,
+    "Target": 1930
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 35,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 40,
+    "Source": 1940,
+    "Target": 1970
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 42,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 30,
+    "Source": 1980,
+    "Target": 2000
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 27,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "peplum shirt",
+    "Vogue": 39,
+    "Source": 2010,
+    "Target": 1900
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 176,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 223,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 194,
+    "Source": 1920,
+    "Target": 1980
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 70,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 120,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 179,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "fringe detail",
+    "Vogue": 109,
+    "Source": 2010,
+    "Target": 1910
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 61,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 62,
+    "Source": 1920,
+    "Target": 1970
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 94,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 68,
+    "Source": 1980,
+    "Target": 1990
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 89,
+    "Source": 1990,
+    "Target": 2000
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 157,
+    "Source": 2000,
+    "Target": 2010
+  },
+  {
+    "Name": "patchwork",
+    "Vogue": 108,
+    "Source": 2010,
+    "Target": 1900
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 326,
+    "Source": 1900,
+    "Target": 1930
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 249,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 181,
+    "Source": 1940,
+    "Target": 1950
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 241,
+    "Source": 1950,
+    "Target": 1970
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 195,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 191,
+    "Source": 1980,
+    "Target": 2000
+  },
+  {
+    "Name": "polka dot",
+    "Vogue": 214,
+    "Source": 2000,
+    "Target": 1890
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 72,
+    "Source": 1890,
+    "Target": 1900
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 53,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 23,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 26,
+    "Source": 1920,
+    "Target": 1930
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 39,
+    "Source": 1930,
+    "Target": 1940
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 19,
+    "Source": 1940,
+    "Target": 2000
+  },
+  {
+    "Name": "balloon sleeves",
+    "Vogue": 52,
+    "Source": 2000,
+    "Target": 1900
+  },
+  {
+    "Name": "acid wash",
+    "Vogue": 38,
+    "Source": 1900,
+    "Target": 1910
+  },
+  {
+    "Name": "acid wash",
+    "Vogue": 50,
+    "Source": 1910,
+    "Target": 1920
+  },
+  {
+    "Name": "acid wash",
+    "Vogue": 41,
+    "Source": 1920,
+    "Target": 1970
+  },
+  {
+    "Name": "acid wash",
+    "Vogue": 46,
+    "Source": 1970,
+    "Target": 1980
+  },
+  {
+    "Name": "acid wash",
+    "Vogue": 39,
+    "Source": 1980,
+    "Target": 1990
+  }
+]
