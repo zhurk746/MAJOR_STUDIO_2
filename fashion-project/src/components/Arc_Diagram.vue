@@ -1,9 +1,11 @@
 <template>
- <div>
-     <h1>Fashion and its History: Does it repeat itself?</h1>
-     <h3>A visual analysis of Vogue fashion trend data over the last 150 years</h3>
-  <div id="my_colorlegend" :key="filterLegend.length"></div>   
-  <div id="my_dataviz"></div>
+  <div>
+    <h1>Fashion and its History: Does it repeat itself?</h1>
+    <h3>
+      A visual analysis of Vogue fashion trend data over the last 150 years
+    </h3>
+    <div id="my_colorlegend" :key="filterLegend.length"></div>
+    <div id="my_dataviz"></div>
     <!-- <svg :height="height" :width="width">
       <g class="Arcs" />
     </svg> -->
@@ -46,72 +48,11 @@ function cleanData(data) {
     return fashionData
 }
 
-export default {
-  name: "ArcChart",
-  data() {
-    return {
-      data: cleanData(rawData),
-      hoveredNode: null,
-      filterLegend: [],
-    };
-  },
-  methods: {
-    onmouseover(d) {
-        console.log (d);
-        this.hoveredNode = d.id;
-      //this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
-    },
-    onLegendClick(trend) {
-        // console.log(this.filterLegend)
-        this.filterLegend = [
-            ...this.filterLegend,
-            trend
-        ]
-        // console.log(this.filterLegend)
-    }
-  },
-  /*props: {
-    data: Array,
-    height: Number,
-    width: Number,
-  },*/
-  computed: {
-    // xScale() {
-    //   return d3
-    //     .scaleBand()
-    //     .padding(0.1)
-    //     .domain(this.data.map((d) => d.name))
-    //     .range([0, this.width]);
-    // },
-    // yScale() {
-    //   return d3
-    //     .scaleLinear()
-    //     .domain([
-    //       Math.min(
-    //         0,
-    //         d3.min(this.data, (d) => d.temperature)
-    //       ),
-    //       d3.max(this.data, (d) => d.temperature),
-    //     ])
-    //     .range([0, this.height - margin]);
-    // },
-    // rectWidth() {
-    //   return this.xScale.bandwidth();
-    // },
-  },
-  mounted() {
-      const that = this;
-    var margin = {top: 0, right: 30, bottom: 50, left: 60},
-    width = 1080 - margin.left - margin.right,
-    height = 920 - margin.top - margin.bottom;
-console.log('here')
-    // append the svg object to the body of the page
-
-    function legendDraw(){
+function legendDraw(onLegendClick, uniqueTrends){
     var color_legend=d3.select("#my_colorlegend")
         .append("svg")
         .attr('width', 1080)
-        .attr('height', 200)
+        .attr('height', 400)
         .append("g")
         .attr('transform', 'translate(0, 20)')
         
@@ -119,7 +60,7 @@ console.log('here')
     const entrySpacing = 16;  // spacing between legend entries
     const entryRadius = 5;    // radius of legend entry marks
     const labelOffset = 4;    // additional horizontal offset of text labels
-    const baselineOffset = 20; // text baseline offset, depends on radius and font size
+    const baselineOffset = 0; // text baseline offset, depends on radius and font size
 
     color_legend
         .append('text')
@@ -131,8 +72,7 @@ console.log('here')
         .attr('font-size', 12)
         .text('Trends');
 
-    console.log(this.data.links);
-    const uniqueTrends = [...new Set(this.data.links.map(d => d.trend))]
+    //console.log(this.data.links);
     const entries = color_legend.selectAll('g')
         .data(uniqueTrends)
         .join('g')
@@ -166,7 +106,7 @@ console.log('here')
             else {return 'grey'}
         })
         .on('click', function (event, d) {
-            that.onLegendClick(d)
+            onLegendClick(d)
         });
 
     entries.append('text')
@@ -180,7 +120,71 @@ console.log('here')
   
     }
 
-    legendDraw();
+export default {
+  name: "ArcChart",
+  data() {
+    return {
+      data: cleanData(rawData),
+      hoveredNode: null,
+      filterLegend: [],
+    };
+  },
+  methods: {
+    onmouseover(d) {
+        console.log (d);
+        this.hoveredNode = d.id;
+      //this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
+    },
+    onLegendClick(trend) {
+        // console.log(this.filterLegend)
+        this.filterLegend = [
+            ...this.filterLegend,
+            trend
+        ]
+        // console.log(this.filterLegend)
+    }
+  },
+  /*props: {
+    data: Array,
+    height: Number,
+    width: Number,
+  },*/
+  computed: {
+    uniqueTrends() {
+     return [...new Set(this.data.links.map(d => d.trend))]
+    }
+    // xScale() {
+    //   return d3
+    //     .scaleBand()
+    //     .padding(0.1)
+    //     .domain(this.data.map((d) => d.name))
+    //     .range([0, this.width]);
+    // },
+    // yScale() {
+    //   return d3
+    //     .scaleLinear()
+    //     .domain([
+    //       Math.min(
+    //         0,
+    //         d3.min(this.data, (d) => d.temperature)
+    //       ),
+    //       d3.max(this.data, (d) => d.temperature),
+    //     ])
+    //     .range([0, this.height - margin]);
+    // },
+    // rectWidth() {
+    //   return this.xScale.bandwidth();
+    // },
+  },
+  mounted() {
+      legendDraw(this.onLegendClick, this.uniqueTrends);
+      const that = this;
+    var margin = {top: 0, right: 30, bottom: 50, left: 60},
+    width = 1080 - margin.left - margin.right,
+    height = 920 - margin.top - margin.bottom;
+console.log('here')
+    // append the svg object to the body of the page
+
     var svg = d3.select("#my_dataviz")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -304,8 +308,7 @@ console.log('here')
         .style("font-size", 24)
 
     //adding a legend
-    
-    
+        
      // <-- our legend helper is invoked just like an axis generator
       nodesDraw
         .on('mouseenter', function (event, d) {
@@ -362,13 +365,14 @@ console.log('here')
         })
     },
     updated() {
+        legendDraw(this.onLegendClick, this.uniqueTrends);
         const that = this;
-        legendDraw();
+        
         var svg = d3.select("#my_dataviz")
             .select("svg")
             .select("g")
         console.log(this.filterLegend)
-        var nodesDraw = svg
+        svg
             .selectAll(".mynodes")
             .style('opacity', function(d) {
                 if (that.filterLegend.length === 0) {
@@ -381,9 +385,17 @@ console.log('here')
 
 
         // Highlight the nodes: every node is green except of him
-        nodesDraw
+        //nodesDraw
            // .style('opacity', .2)
-        d3.select(this)
+        //d3.select(this)
+
+        svg
+        .selectAll('.mylinks')
+        .attr('stroke', function (d) {
+            if (that.filterLegend.indexOf(d.trend) !== -1) {
+                return 'black'
+        }
+        else {return 'grey'}
             //.style('opacity', 1)
         // Highlight the connections
         // const linksDraw = svg
@@ -396,9 +408,10 @@ console.log('here')
            /* .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
             .attr("y", function(label_d){ return label_d.name === d.name ? 10 : 0 } )
             .text(function(d){ return(d.id)} )*/
+    })
+    
     }
-
-  };
+};
 
 </script>
 
