@@ -2,7 +2,7 @@
  <div>
      <h1>Fashion and its History: Does it repeat itself?</h1>
      <h3>A visual analysis of Vogue fashion trend data over the last 150 years</h3>
-  <div id="my_colorlegend"></div>   
+  <div id="my_colorlegend" :key="filterLegend.length"></div>   
   <div id="my_dataviz"></div>
     <!-- <svg :height="height" :width="width">
       <g class="Arcs" />
@@ -106,6 +106,8 @@ export default {
     height = 920 - margin.top - margin.bottom;
 console.log('here')
     // append the svg object to the body of the page
+
+    function legendDraw(){
     var color_legend=d3.select("#my_colorlegend")
         .append("svg")
         .attr('width', 1080)
@@ -176,6 +178,9 @@ console.log('here')
         .style('user-select', 'none') // <-- disallow selectable text
         .text(function(d){ return(d)} )  
   
+    }
+
+    legendDraw();
     var svg = d3.select("#my_dataviz")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -358,6 +363,7 @@ console.log('here')
     },
     updated() {
         const that = this;
+        legendDraw();
         var svg = d3.select("#my_dataviz")
             .select("svg")
             .select("g")
@@ -369,7 +375,7 @@ console.log('here')
                     return 1;
                 }
                 console.log(d);
-                return this.filterLegend.indexOf(d.name) === -1 ? 0 : 1
+                return that.filterLegend.indexOf(d.name) === -1 ? 0 : 1
             })
         
 
