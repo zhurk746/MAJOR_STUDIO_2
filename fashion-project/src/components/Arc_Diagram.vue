@@ -2,10 +2,24 @@
   <div>
     <h1>Fashion and its History: Does it repeat itself?</h1>
     <h3>
-      A visual analysis of Vogue fashion trend data over the last 150 years
+      A visual analysis of Vogue fashion trend data over the last 130 years.
     </h3>
-    <div id="my_colorlegend" :key="filterLegend.length"></div>
-    <div id="my_dataviz"></div>
+    <p>
+      Begin your exploration of fashion trends over the last two centuries by
+      clicking each node within the color legend to redraw the visualization
+      below. Height of links between each decade is representative of the number
+      of times a search term appeared in the Vogue archives during the given
+      time period. Fashion trends explored were chosen based on inspiration from
+      various different exhibits along with peer feedback.
+    </p>
+    <div class="flex-container">
+      <div
+        id="my_colorlegend"
+        :key="filterLegend.length"
+        class="flex-child"
+      ></div>
+      <div id="my_dataviz" class="flex-child"></div>
+    </div>
     <!-- <svg :height="height" :width="width">
       <g class="Arcs" />
     </svg> -->
@@ -14,76 +28,108 @@
 
 <script>
 import * as d3 from "d3";
-import rawData from '../twenty_trends.json'
+import rawData from "../twenty_trends.json";
 // const margin = 20;
 
 function cleanData(data) {
-    let fashionData=data;
-    //console.log(fashionData);
-    let nodes=[];
-    let links=[];
-    fashionData.forEach(function (n){
-      let nodeId=n.Source;
-      let nodeName=n.Name;
-      let linkSource=n.Source;
-      let linkTarget=n.Target;
-      let countVogue=n.Vogue;
+  let fashionData = data;
+  //console.log(fashionData);
+  let nodes = [];
+  let links = [];
+  fashionData.forEach(function (n) {
+    let nodeId = n.Source;
+    let nodeName = n.Name;
+    let linkSource = n.Source;
+    let linkTarget = n.Target;
+    let countVogue = n.Vogue;
     nodes.push({
-        id: nodeId,
-        name: nodeName,
-        n: countVogue,
-        grp: 1
+      id: nodeId
+      //name: nodeName,
+      //n: countVogue
     });
-     links.push({
-         source: linkSource,
-         target: linkTarget,
-         size: countVogue,
-         trend: nodeName
-    })   ;
+    links.push({
+      source: linkSource,
+      target: linkTarget,
+      size: countVogue,
+      trend: nodeName
     });
-    
-    fashionData={nodes, links};
-    console.log(fashionData);
-    data=fashionData;
-    return fashionData
+  });
+  const uniqueNodes= [...new Set(nodes.map((d) => d.id))] 
+  fashionData = { 
+      "nodes": uniqueNodes, 
+      "links": links
+    };
+  console.log(fashionData);
+  data = fashionData;
+  return fashionData;
 }
 
-function legendDraw(onLegendClick, uniqueTrends){
-    var color_legend=d3.select("#my_colorlegend")
-        .append("svg")
-        .attr('width', 1080)
-        .attr('height', 400)
-        .append("g")
-        .attr('transform', 'translate(0, 20)')
-        
-    const titlePadding = 14;  // padding between title and entries
-    const entrySpacing = 16;  // spacing between legend entries
-    const entryRadius = 5;    // radius of legend entry marks
-    const labelOffset = 4;    // additional horizontal offset of text labels
-    const baselineOffset = 0; // text baseline offset, depends on radius and font size
+const colorLookup = {
+  "bell bottoms": "#59C3C3",
+  corduroy: "#8D6A9F",
+  cutouts: "#FF21F1",
+  "high waisted pants": "#B0FF92",
+  "low rise jeans": "#D6FF79",
+  "mini-skirt": "#B33F62",
+  "off the shoulder": "#0FA3B1",
+  "plaid flannel shirt": "#6320EE",
+  "shift dress": "#F7A072",
+  "shoulder pads": "#F2E34C",
+  "tie-dye": "#48BEFF",
+  "platform shoes": "#3DFAFF",
+  "leather jacket": "#4A306D",
+  sequin: "#FF99C9",
+  "peplum shirt": "#084887",
+  "fringe detail": "#C0C999",
+  patchwork: "#2E5EAA",
+  "polka dot": "#C3BEF7",
+  "balloon sleeves": "#B30089",
+  "acid wash": "#E55934",
+};
 
-    color_legend
-        .append('text')
-        .attr('x', 0)
-        .attr('y', 0)
-        .attr('fill', 'black')
-        .attr('font-family', 'Helvetica Neue, Arial')
-        .attr('font-weight', 'bold')
-        .attr('font-size', 12)
-        .text('Trends');
+function legendDraw(onLegendClick, uniqueTrends) {
+  var color_legend = d3
+    .select("#my_colorlegend")
+    .append("svg")
+    .attr("width", 250)
+    .attr("height", 550)
+    .append("g")
+    .attr("transform", "translate(0, 20)");
 
-    //console.log(this.data.links);
-    const entries = color_legend.selectAll('g')
-        .data(uniqueTrends)
-        .join('g')
-        .attr('transform', function(d,i) {return `translate(0, ${titlePadding + i * entrySpacing})`});
-    
-    console.log(entries)
+  const titlePadding = 20; // padding between title and entries
+  const entrySpacing = 25; // spacing between legend entries
+  const entryRadius = 8; // radius of legend entry marks
+  const labelOffset = 8; // additional horizontal offset of text labels
+  const baselineOffset = 0; // text baseline offset, depends on radius and font size
 
-    entries.append('circle')
-        .attr('cx', entryRadius) // <-- offset symbol x-position by radius
-        .attr('r', entryRadius)
-        .attr('fill', function (d) { if (d=='bell bottoms') {return '#59C3C3'}
+  color_legend
+    .append("text")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("fill", "black")
+    .attr("font-family", "Helvetica Neue, Arial")
+    .attr("font-weight", "bold")
+    .attr("font-size", 20)
+    .text("Trends");
+
+  //console.log(this.data.links);
+  const entries = color_legend
+    .selectAll("g")
+    .data(uniqueTrends)
+    .join("g")
+    .attr("transform", function (d, i) {
+      return `translate(0, ${titlePadding + i * entrySpacing})`;
+    });
+
+  console.log(entries);
+
+  entries
+    .append("circle")
+    .attr("cx", entryRadius) // <-- offset symbol x-position by radius
+    .attr("r", entryRadius)
+    .attr("fill", function (d) {
+      return colorLookup[d] || "grey";
+      /*if (d=='bell bottoms') {return '#59C3C3'}
             else if (d=='corduroy') {return '#8D6A9F'}
             else if (d=='cutouts') {return '#FFF21F1'}
             else if (d=='high waisted pants') {return '#B0FF92'}
@@ -103,22 +149,24 @@ function legendDraw(onLegendClick, uniqueTrends){
             else if (d=='polka dot'){return '#C3BEF7'}
             else if (d=='balloon sleeves'){return '#B30089'}
             else if (d=='acid wash'){return '#E55934'}
-            else {return 'grey'}
-        })
-        .on('click', function (event, d) {
-            onLegendClick(d)
-        });
+            else {return 'grey'}*/
+    })
+    .on("click", function (event, d) {
+      onLegendClick(d);
+    });
 
-    entries.append('text')
-        .attr('x', 10 * entryRadius + labelOffset) // <-- place labels to the left of symbols
-        .attr('y', baselineOffset) // <-- adjust label y-position for proper alignment
-        .attr('fill', 'black')
-        .attr('font-family', 'Helvetica Neue, Arial')
-        .attr('font-size', 10)
-        .style('user-select', 'none') // <-- disallow selectable text
-        .text(function(d){ return(d)} )  
-  
-    }
+  entries
+    .append("text")
+    .attr("x", 10 * entryRadius + labelOffset) // <-- place labels to the left of symbols
+    .attr("y", baselineOffset) // <-- adjust label y-position for proper alignment
+    .attr("fill", "black")
+    .attr("font-family", "Helvetica Neue, Arial")
+    .attr("font-size", 16)
+    .style("user-select", "none") // <-- disallow selectable text
+    .text(function (d) {
+      return d;
+    });
+}
 
 export default {
   name: "ArcChart",
@@ -131,18 +179,15 @@ export default {
   },
   methods: {
     onmouseover(d) {
-        console.log (d);
-        this.hoveredNode = d.id;
+      console.log(d);
+      this.hoveredNode = d.id;
       //this.width = Math.min(MAX_SVG_WIDTH, window.innerWidth);
     },
     onLegendClick(trend) {
-        // console.log(this.filterLegend)
-        this.filterLegend = [
-            ...this.filterLegend,
-            trend
-        ]
-        // console.log(this.filterLegend)
-    }
+      // console.log(this.filterLegend)
+      this.filterLegend = [...this.filterLegend, trend];
+      // console.log(this.filterLegend)
+    },
   },
   /*props: {
     data: Array,
@@ -151,8 +196,8 @@ export default {
   },*/
   computed: {
     uniqueTrends() {
-     return [...new Set(this.data.links.map(d => d.trend))]
-    }
+      return [...new Set(this.data.links.map((d) => d.trend))];
+    },
     // xScale() {
     //   return d3
     //     .scaleBand()
@@ -177,35 +222,33 @@ export default {
     // },
   },
   mounted() {
-      legendDraw(this.onLegendClick, this.uniqueTrends);
-      const that = this;
-    var margin = {top: 0, right: 30, bottom: 50, left: 60},
-    width = 1080 - margin.left - margin.right,
-    height = 920 - margin.top - margin.bottom;
-console.log('here')
+    legendDraw(this.onLegendClick, this.uniqueTrends);
+    const that = this;
+    var margin = { top: 0, right: 15, bottom: 50, left: 15 },
+      width = 2560 - margin.left - margin.right,
+      height = 920 - margin.top - margin.bottom;
+    console.log("here");
     // append the svg object to the body of the page
 
-    var svg = d3.select("#my_dataviz")
-    .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-        .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")")
-    
-    
+    var svg = d3
+      .select("#my_dataviz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// Read dummy data
+    // Read dummy data
     //let fashionData;
     // d3.json("twenty_trends.json", function(data) {
-        
-        
 
-        //console.log(data);
+    //console.log(data);
 
     // List of node names
-    
-    var allNodes = this.data.nodes.map(function(d){return d.id})
+
+    /*var allNodes = this.data.nodes.map(function (d) {
+      return d.id;
+    });*/
 
     // List of groups
     //var allGroups = this.data.links.map(function(d){return d.size})
@@ -214,7 +257,7 @@ console.log('here')
     // A color scale for groups:
     /*var color = d3.scaleOrdinal()
         .domain(allGroups)*/
-        //.range(d3.schemeSet3);
+    //.range(d3.schemeSet3);
 
     // A linear scale for node size
     /*var size = d3.scaleLinear()
@@ -222,11 +265,16 @@ console.log('here')
         .range([2,10]);*/
 
     // A linear scale to position the nodes on the X axis
-    var x = d3.scalePoint()
-        .range([0, width])
-        .domain(allNodes.sort(function(a,b) { return a - b }))
-        
-        console.log(x.domain());
+    var x = d3
+      .scalePoint()
+      .range([0, width])
+      .domain(
+        this.data.nodes.sort(function (a, b) {
+          return a - b;
+        })
+      );
+
+    console.log(x.domain());
 
     // In my input data, links are provided between nodes -id-, NOT between node names.
     // So I have to do a link between this id and the name
@@ -236,26 +284,39 @@ console.log('here')
     });*/
 
     // Add the links
-    
-    var linksDraw = svg
-        .selectAll('.mylinks')
-        .data(this.data.links)
-        .enter()
-        .append('path')
-        .attr('class' , 'mylinks')
-        .attr('d', function (d) {
-        let start = x(d.source)    // X position of start node on the X axis
-        let end = x(d.target)      // X position of end node
+
+    var linksDraw = svg 
+      .selectAll(".mylinks")
+      .data(this.data.links)
+      .enter()
+      .append("path")
+      .attr("class", "mylinks")
+      .attr("d", function (d) {
+        let start = x(d.source); // X position of start node on the X axis
+        let end = x(d.target); // X position of end node
         //console.log(d.trend, start, end)
-        return ['M', start, height-30,    // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
-            'A',                            // This means we're gonna build an elliptical arc
-            (start-end)/2, ',',    // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
-            (start-end)/2*(Math.log(d.size))/3.5, 0, 0, ',', //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data 
-            start < end ? 1 : 0, end, ',', height-30] // We always want the arc on top. So if end is before start, putting 0 here turn the arc upside down.
-            .join(' ');
-        })
-        .style("fill", 'none')
-        .attr("stroke", function (d) { if (d.trend=='bell bottoms') {return '#59C3C3'}
+        return [
+          "M",
+          start,
+          height - 30, // the arc starts at the coordinate x=start, y=height-30 (where the starting node is)
+          "A", // This means we're gonna build an elliptical arc
+          (start - end) / 2,
+          ",", // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
+          ((start - end) / 2) * (Math.log(d.size*5.5)),
+          0,
+          0,
+          ",", //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data
+          start < end ? 1 : 0,
+          end,
+          ",",
+          height - 30,
+        ] // We always want the arc on top. So if end is before start, putting 0 here turn the arc upside down.
+          .join(" ");
+      })
+      .style("fill", "none")
+      .attr("stroke", function (d) {
+        return colorLookup[d.trend] || "grey";
+        /*if (d.trend=='bell bottoms') {return '#59C3C3'}
             else if (d.trend=='corduroy') {return '#8D6A9F'}
             else if (d.trend=='cutouts') {return '#FFF21F1'}
             else if (d.trend=='high waisted pants') {return '#B0FF92'}
@@ -275,65 +336,89 @@ console.log('here')
             else if (d.trend=='polka dot'){return '#C3BEF7'}
             else if (d.trend=='balloon sleeves'){return '#B30089'}
             else if (d.trend=='acid wash'){return '#E55934'}
-            else {return 'grey'}
-        })
-        .style("stroke-width", 2.5)
+            else {return 'grey'}*/
+      })
+      .style("stroke-width", 2.5);
 
+console.log(this.data.nodes)
     // Add the circle for the nodes
     var nodesDraw = svg
-        .selectAll(".mynodes")
-        .data(this.data.nodes.sort(function(a,b) { return +b.id - +a.id }))
-        .enter()
-        .append("circle")
-        .attr('class', 'mynodes')
-        .attr("cx", function(d){ return(x(d.id))})
-        .attr("cy", height-30)
-        .attr("r", 10)
-        .style("fill", 'white')
-        .attr("stroke", "black")
-        .style("stroke-width", '2.5')
+      .selectAll(".mynodes")
+      .data(
+        this.data.nodes.sort(function (a, b) {
+          return +b - +a;
+        })
+      )
+      .enter()
+      .append("circle")
+      .attr("class", "mynodes")
+      .attr("cx", function (d) {
+        return x(d);
+      })
+      .attr("cy", height - 30)
+      .attr("r", 10)
+      .style("fill", "white")
+      .attr("stroke", "black")
+      .style("stroke-width", "2.5");
 
     // And give them a label
     var labels = svg
-        .selectAll(".mylabels")
-        .data(this.data.nodes)
-        .enter()
-        .append("text")
-        .attr('class', 'mylabels')
-        .attr("x", 0)
-        .attr("y", 0)
-        .text(function(d){ return(d.id)} )
-        .style("text-anchor", "end")
-        .attr("transform", function(d){ return( "translate(" + (x(d.id)) + "," + (height-15) + ")rotate(-45)")})
-        .style("font-size", 24)
+      .selectAll(".mylabels")
+      .data(this.data.nodes)
+      .enter()
+      .append("text")
+      .attr("class", "mylabels")
+      .attr("x", 0)
+      .attr("y", 0)
+      .text(function (d) {
+        return d;
+      })
+      .style("text-anchor", "end")
+      .attr("transform", function (d) {
+        return "translate(" + x(d) + "," + (height - 15) + ")rotate(-90)";
+      })
+      .style("font-size", 20);
 
     //adding a legend
-        
-     // <-- our legend helper is invoked just like an axis generator
-      nodesDraw
-        .on('mouseenter', function (event, d) {
-            that.onmouseover(d)
+
+    // <-- our legend helper is invoked just like an axis generator
+    nodesDraw
+      .on("mouseenter", function (event, d) {
+        that.onmouseover(d);
         // Highlight the nodes: every node is green except of him
-        nodesDraw
-            .style('opacity', .2)
-        d3.select(this)
-            .style('opacity', 1)
+        nodesDraw.style("opacity", 0.2);
+        d3.select(this).style("opacity", 1);
         // Highlight the connections
         linksDraw
-            .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? d.name : '#b8b8b8';})
-            .style('stroke-opacity', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 1 : .2;})
-            .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
+          .style("stroke", function (link_d) {
+            return link_d.source === d || link_d.target === d
+              ? d.trend
+              : "#b8b8b8";
+          })
+          .style("stroke-opacity", function (link_d) {
+            return link_d.source === d || link_d.target === d ? 1 : 0.2;
+          })
+          .style("stroke-width", function (link_d) {
+            return link_d.source === d || link_d.target === d ? 4 : 1;
+          });
         labels
-            .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
-            .attr("y", function(label_d){ return label_d.name === d.name ? 10 : 0 } )
-            .text(function(d){ return(d.id)} )
-
-        })
-        .on('mouseout', function () {
-        nodesDraw.style('opacity', 1)
+          .style("font-size", function (label_d) {
+            return label_d === d ? 16 : 2;
+          })
+          .attr("y", function (label_d) {
+            return label_d === d ? 10 : 0;
+          })
+          .text(function (d) {
+            return d;
+          });
+      })
+      .on("mouseout", function () {
+        nodesDraw.style("opacity", 1);
         linksDraw
-            .style("fill", 'none')
-            .attr("stroke", function (d) { if (d.trend=='bell bottoms') {return '#59C3C3'}
+          .style("fill", "none")
+          .attr("stroke", function (d) {
+            return colorLookup[d.trend] || "grey";
+            /*if (d.trend=='bell bottoms') {return '#59C3C3'}
             else if (d.trend=='corduroy') {return '#8D6A9F'}
             else if (d.trend=='cutouts') {return '#FFF21F1'}
             else if (d.trend=='high waisted pants') {return '#B0FF92'}
@@ -353,66 +438,73 @@ console.log('here')
             else if (d.trend=='polka dot'){return '#C3BEF7'}
             else if (d.trend=='balloon sleeves'){return '#B30089'}
             else if (d.trend=='acid wash'){return '#E55934'}
-            else {return 'grey'}
-        })
-        .style('stroke-width', '2.5') 
-        labels 
-            .style("font-size", 24 )
-            .text(function(d){return d.id})
-            .style("text-anchor", "end")
-            .attr("transform", function(d){ return( "translate(" + (x(d.id)) + "," + (height-15) + ")rotate(-45)")})
+            else {return 'grey'}*/
+          })
+          .style("stroke-width", "2.5");
+        labels
+          .style("font-size", 24)
+          .text(function (d) {
+            return d;
+          })
+          .style("text-anchor", "end")
+          .attr("transform", function (d) {
+            return (
+              "translate(" + x(d) + "," + (height - 15) + ")rotate(-90)"
+            );
+          });
+      });
+  },
+  updated() {
+    legendDraw(this.onLegendClick, this.uniqueTrends);
+    const that = this;
 
-        })
-    },
-    updated() {
-        legendDraw(this.onLegendClick, this.uniqueTrends);
-        const that = this;
-        
-        var svg = d3.select("#my_dataviz")
-            .select("svg")
-            .select("g")
-        console.log(this.filterLegend)
-        svg
-            .selectAll(".mynodes")
-            .style('opacity', function(d) {
-                if (that.filterLegend.length === 0) {
-                    return 1;
-                }
-                console.log(d);
-                return that.filterLegend.indexOf(d.name) === -1 ? 0 : 1
-            })
-        
+    var svg = d3.select("#my_dataviz").select("svg").select("g");
+    console.log(this.filterLegend);
+    svg.selectAll(".mynodes").style("opacity", function (d) {
+      if (that.filterLegend.length === 0) {
+        return 1;
+      }
+      console.log(d);
+      return that.filterLegend.indexOf(d.name) === -1 ? 0 : 1;
+    });
 
+    // Highlight the nodes: every node is green except of him
+    //nodesDraw
+    // .style('opacity', .2)
+    //d3.select(this)
 
-        // Highlight the nodes: every node is green except of him
-        //nodesDraw
-           // .style('opacity', .2)
-        //d3.select(this)
-
-        svg
-        .selectAll('.mylinks')
-        .attr('stroke', function (d) {
-            if (that.filterLegend.indexOf(d.trend) !== -1) {
-                return 'black'
+    svg
+      .selectAll(".mylinks")
+      .attr("stroke", function (d) {
+        if (that.filterLegend.indexOf(d.trend) !== -1) {
+          return colorLookup[d.trend];
+        } else {
+          return "D3D3D3";
         }
-        else {return 'grey'}
-            //.style('opacity', 1)
+        //.style('opacity', 1)
         // Highlight the connections
         // const linksDraw = svg
         // .selectAll(".mylinks")
-            /*.style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? d.name : '#b8b8b8';})
+        /*.style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? d.name : '#b8b8b8';})
             .style('stroke-opacity', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 1 : .2;})
             .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})*/
         // const labels =svg
         // .selectAll(".mylabels")
-           /* .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
+        /* .style("font-size", function(label_d){ return label_d.name === d.name ? 16 : 2 } )
             .attr("y", function(label_d){ return label_d.name === d.name ? 10 : 0 } )
             .text(function(d){ return(d.id)} )*/
-    })
+      })
+      .attr("stroke-width", "10");
     
-    }
+    /*d3.select("#my_colorlegend").select("svg").select("g").select("circle")
+    .attr("stroke", function (d) {
+        if (that.filterLegend.indexof(d.trend) !== -1) {return 'black'}
+    else { return 'white'}
+    })
+    .style("stroke-width", "3.5");*/
+      
+  },
 };
-
 </script>
 
 <style>
@@ -422,5 +514,31 @@ console.log('here')
 }
 input[type="range"]::-webkit-slider-thumb {
   cursor: ew-resize; /* grab */
+}
+p {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.flex-container {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+/* 
+.flex-child {
+  flex: 1;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+} */
+
+#my_colorlegend {
+    /* width: 25%; */
+    margin-top: 200px
+}
+#my_dataviz {
+    /* width: 75%; */
+    overflow-x: scroll
 }
 </style>
