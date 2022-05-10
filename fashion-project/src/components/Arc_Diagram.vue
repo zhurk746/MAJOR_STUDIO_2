@@ -12,6 +12,11 @@
       time period. Fashion trends explored were chosen based on inspiration from
       various different exhibits along with peer feedback.
     </p>
+    <p>
+     Split up the fashion trends in several categories to guide your exploration. Begin by examining trends for bottoms
+     and take a look at high rise vs low rise jeans. Next take a look at various sleeve trends such as, balloon sleeves, cut-outs 
+     and off the shoulder. Hover over the varying decades to get a better understanding of the time period when particular trends were popular.
+    </p>
     <div class="flex-container">
       <div
         id="my_colorlegend"
@@ -87,6 +92,22 @@ const colorLookup = {
   "acid wash": "#E55934",
 };
 
+const decadeDetail= {
+  1890: "We begin our exploration of fashion trends in the late 1800s where we can see references of old timey styles like corduroy and balloon sleeves",
+  1900: "We first see polka-dots, bell bottoms and shoulder pads gain popularity in the early 20th century",
+  1910: "The peplum style of top first gains popularity in the 1910s with a narrower silhouette and broader fit around the shoulders",
+  1920: "This was a time known for glamour and ornate details. Cutouts became more popular during this time period as more intricate detail was added to garments.",
+  1930: "Leather jackets are the style symbol of the era as society begins to drawn fashion inspiration from film stars and celebrities",
+  1940: "Fabric shortages from WW2 played a huge role in the recycling of styles and a shift to using lesser fabric in the 40s",
+  1950: "The post war era marked a return to ultra feminine silhouettes with polka dots and higher waisted bottoms.",
+  1960: "Miniskirts first came into style in the late 50s and 60s as a symbol for the societal shift occuring with the youth movement.",
+  1970: "The 70's was a decade where tie-dye, bell-bottoms and fringe were popular reminiscent of the societal movements and youth culture of the era",
+  1980: "Shoulder pads became symbolic for women in the workplace demanding equality and power in their positions",
+  1990: "Platform shoes, specifically sneakers gain popularity and sneaker styles symbolize the hip-hop culture of the 90s era",
+  2000: "Low rise jeans and acid wash become the grunge symbols of the Y2K era.",
+  2010: "Skinny jeans were popular through the early 2000s and 2010s. Looser flare jeans have made a comeback in the current decade."
+}
+
 function legendDraw(onLegendClick, uniqueTrends) {
   var color_legend = d3
     .select("#my_colorlegend")
@@ -100,7 +121,7 @@ function legendDraw(onLegendClick, uniqueTrends) {
   const entrySpacing = 25; // spacing between legend entries
   const entryRadius = 8; // radius of legend entry marks
   const labelOffset = 8; // additional horizontal offset of text labels
-  const baselineOffset = 0; // text baseline offset, depends on radius and font size
+  const baselineOffset = 4; // text baseline offset, depends on radius and font size
 
   color_legend
     .append("text")
@@ -157,7 +178,7 @@ function legendDraw(onLegendClick, uniqueTrends) {
 
   entries
     .append("text")
-    .attr("x", 10 * entryRadius + labelOffset) // <-- place labels to the left of symbols
+    .attr("x", 3 * entryRadius + labelOffset) // <-- place labels to the left of symbols
     .attr("y", baselineOffset) // <-- adjust label y-position for proper alignment
     .attr("fill", "black")
     .attr("font-family", "Helvetica Neue, Arial")
@@ -442,16 +463,23 @@ console.log(this.data.nodes)
           })
           .style("stroke-width", "2.5");
         labels
-          .style("font-size", 24)
+          .style("font-size", 9)
+          /*.append("rect")
+          .attr("width", 100)
+          .attr("height", 20)
+          .style("fill", "none")*/
+          //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
           .text(function (d) {
-            return d;
+            return decadeDetail[d];
           })
           .style("text-anchor", "end")
           .attr("transform", function (d) {
             return (
-              "translate(" + x(d) + "," + (height - 15) + ")rotate(-90)"
+              "translate(" + x(d) + "," + (height - 15) + ")rotate(0)"
             );
-          });
+          })
+          .attr("x", 100)
+          .attry("y",500)
       });
   },
   updated() {
@@ -496,12 +524,13 @@ console.log(this.data.nodes)
       })
       .attr("stroke-width", "10");
     
-    /*d3.select("#my_colorlegend").select("svg").select("g").select("circle")
+    d3.select("#my_colorlegend").select("svg").selectAll("g").select("circle")
     .attr("stroke", function (d) {
-        if (that.filterLegend.indexof(d.trend) !== -1) {return 'black'}
+      console.log(d)
+        if (that.filterLegend.indexOf(d) !== -1) {return 'black'}
     else { return 'white'}
     })
-    .style("stroke-width", "3.5");*/
+    //.style("stroke-width", "3.5");
       
   },
 };
