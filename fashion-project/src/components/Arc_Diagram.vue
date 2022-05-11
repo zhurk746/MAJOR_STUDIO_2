@@ -13,9 +13,12 @@
       various different exhibits along with peer feedback.
     </p>
     <p>
-     Split up the fashion trends in several categories to guide your exploration. Begin by examining trends for bottoms
-     and take a look at high rise vs low rise jeans. Next take a look at various sleeve trends such as, balloon sleeves, cut-outs 
-     and off the shoulder. Hover over the varying decades to get a better understanding of the time period when particular trends were popular.
+      Split up the fashion trends in several categories to guide your
+      exploration. Begin by examining trends for bottoms and take a look at high
+      rise vs low rise jeans. Next take a look at various sleeve trends such as,
+      balloon sleeves, cut-outs and off the shoulder. Hover over the varying
+      decades to get a better understanding of the time period when particular
+      trends were popular.
     </p>
     <div class="flex-container">
       <div
@@ -48,7 +51,7 @@ function cleanData(data) {
     let linkTarget = n.Target;
     let countVogue = n.Vogue;
     nodes.push({
-      id: nodeId
+      id: nodeId,
       //name: nodeName,
       //n: countVogue
     });
@@ -56,14 +59,14 @@ function cleanData(data) {
       source: linkSource,
       target: linkTarget,
       size: countVogue,
-      trend: nodeName
+      trend: nodeName,
     });
   });
-  const uniqueNodes= [...new Set(nodes.map((d) => d.id))] 
-  fashionData = { 
-      "nodes": uniqueNodes, 
-      "links": links
-    };
+  const uniqueNodes = [...new Set(nodes.map((d) => d.id))];
+  fashionData = {
+    nodes: uniqueNodes,
+    links: links,
+  };
   console.log(fashionData);
   data = fashionData;
   return fashionData;
@@ -92,7 +95,7 @@ const colorLookup = {
   "acid wash": "#E55934",
 };
 
-const decadeDetail= {
+const decadeDetail = {
   1890: "We begin our exploration of fashion trends in the late 1800s where we can see references of old timey styles like corduroy and balloon sleeves",
   1900: "We first see polka-dots, bell bottoms and shoulder pads gain popularity in the early 20th century",
   1910: "The peplum style of top first gains popularity in the 1910s with a narrower silhouette and broader fit around the shoulders",
@@ -105,8 +108,8 @@ const decadeDetail= {
   1980: "Shoulder pads became symbolic for women in the workplace demanding equality and power in their positions",
   1990: "Platform shoes, specifically sneakers gain popularity and sneaker styles symbolize the hip-hop culture of the 90s era",
   2000: "Low rise jeans and acid wash become the grunge symbols of the Y2K era.",
-  2010: "Skinny jeans were popular through the early 2000s and 2010s. Looser flare jeans have made a comeback in the current decade."
-}
+  2010: "Skinny jeans were popular through the early 2000s and 2010s. Looser flare jeans have made a comeback in the current decade.",
+};
 
 function legendDraw(onLegendClick, uniqueTrends) {
   var color_legend = d3
@@ -306,7 +309,7 @@ export default {
 
     // Add the links
 
-    var linksDraw = svg 
+    var linksDraw = svg
       .selectAll(".mylinks")
       .data(this.data.links)
       .enter()
@@ -323,7 +326,7 @@ export default {
           "A", // This means we're gonna build an elliptical arc
           (start - end) / 2,
           ",", // Next 2 lines are the coordinates of the inflexion point. Height of this point is proportional with start - end distance
-          ((start - end) / 2) * (Math.log(d.size*5.5)),
+          ((start - end) / 2) * Math.log(d.size * 5.5),
           0,
           0,
           ",", //adding multiple of (d.size*920) to seperate lines based on name and add in count as piece of data
@@ -361,7 +364,7 @@ export default {
       })
       .style("stroke-width", 2.5);
 
-console.log(this.data.nodes)
+    console.log(this.data.nodes);
     // Add the circle for the nodes
     var nodesDraw = svg
       .selectAll(".mynodes")
@@ -463,23 +466,35 @@ console.log(this.data.nodes)
           })
           .style("stroke-width", "2.5");
         labels
-          .style("font-size", 9)
+          .selectAll(".mylabels")
+          .data(this.data.nodes)
           /*.append("rect")
-          .attr("width", 100)
-          .attr("height", 20)
           .style("fill", "none")*/
           //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
-          .text(function (d) {
+          .join((enter) => {
+            const g = enter.append("g").attr("class", "mylabels");
+            g.append("rect");
+            g.attr("width", 100)
+            g.attr("height", 200)
+            g.append("text")
+            g.attr("width", 100)
+            g.attr("height", 200) 
+            g.text(function (d) {
+            return decadeDetail[d.id];
+            })
+            g.style("font-size", 12)
+            g.style("text-anchor", "end")
+            g.attr("transform", function (d) {
+            return "translate(" + x(d) + "," + (height - 15) + ")rotate(0)";
+          })
+            return g;
+          })
+          /*.text(function (d) {
             return decadeDetail[d];
-          })
-          .style("text-anchor", "end")
-          .attr("transform", function (d) {
-            return (
-              "translate(" + x(d) + "," + (height - 15) + ")rotate(0)"
-            );
-          })
-          .attr("x", 100)
-          .attry("y",500)
+          })*/
+          
+          //.attr("x", 100)
+          //.attry("y", 500);
       });
   },
   updated() {
@@ -523,15 +538,41 @@ console.log(this.data.nodes)
             .text(function(d){ return(d.id)} )*/
       })
       .attr("stroke-width", "10");
-    
-    d3.select("#my_colorlegend").select("svg").selectAll("g").select("circle")
-    .attr("stroke", function (d) {
-      console.log(d)
-        if (that.filterLegend.indexOf(d) !== -1) {return 'black'}
-    else { return 'white'}
-    })
+
+    d3.select("#my_colorlegend")
+      .select("svg")
+      .selectAll("g")
+      .select("circle")
+      .attr("stroke", function (d) {
+        console.log(d);
+        if (that.filterLegend.indexOf(d) !== -1) {
+          return "black";
+        } else {
+          return "white";
+        }
+      }); 
+
+    svg.selectAll(".mylabels")
+          .data(this.data.nodes)
+          /*.append("rect")
+          .style("fill", "none")*/
+          //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
+          .join((enter) => {
+            const g = enter.append("g").attr("class", "mylabels");
+            g.append("rect");
+            g.attr("width", 100)
+            g.attr("height", 200)
+            g.append("text")
+            g.attr("width", 100)
+            g.attr("height", 200) 
+            g.text(function (d) {
+            return decadeDetail[d.id];
+            })
+            g.style("font-size", 12)
+            g.style("text-anchor", "end")
+            return g;
+          })  
     //.style("stroke-width", "3.5");
-      
   },
 };
 </script>
@@ -563,11 +604,11 @@ p {
 } */
 
 #my_colorlegend {
-    /* width: 25%; */
-    margin-top: 200px
+  /* width: 25%; */
+  margin-top: 200px;
 }
 #my_dataviz {
-    /* width: 75%; */
-    overflow-x: scroll
+  /* width: 75%; */
+  overflow-x: scroll;
 }
 </style>
