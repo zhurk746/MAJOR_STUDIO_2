@@ -76,7 +76,7 @@ const colorLookup = {
   "bell bottoms": "#59C3C3",
   corduroy: "#8D6A9F",
   cutouts: "#FF21F1",
-  "high waisted pants": "#B0FF92",
+  "high waisted pants": "#3A86FF",
   "low rise jeans": "#D6FF79",
   "mini-skirt": "#B33F62",
   "off the shoulder": "#0FA3B1",
@@ -96,19 +96,20 @@ const colorLookup = {
 };
 
 const decadeDetail = {
-  1890: "We begin our exploration of fashion trends in the late 1800s where we can see references of old timey styles like corduroy and balloon sleeves",
-  1900: "We first see polka-dots, bell bottoms and shoulder pads gain popularity in the early 20th century",
-  1910: "The peplum style of top first gains popularity in the 1910s with a narrower silhouette and broader fit around the shoulders",
-  1920: "This was a time known for glamour and ornate details. Cutouts became more popular during this time period as more intricate detail was added to garments.",
-  1930: "Leather jackets are the style symbol of the era as society begins to drawn fashion inspiration from film stars and celebrities",
-  1940: "Fabric shortages from WW2 played a huge role in the recycling of styles and a shift to using lesser fabric in the 40s",
-  1950: "The post war era marked a return to ultra feminine silhouettes with polka dots and higher waisted bottoms.",
-  1960: "Miniskirts first came into style in the late 50s and 60s as a symbol for the societal shift occuring with the youth movement.",
-  1970: "The 70's was a decade where tie-dye, bell-bottoms and fringe were popular reminiscent of the societal movements and youth culture of the era",
-  1980: "Shoulder pads became symbolic for women in the workplace demanding equality and power in their positions",
-  1990: "Platform shoes, specifically sneakers gain popularity and sneaker styles symbolize the hip-hop culture of the 90s era",
-  2000: "Low rise jeans and acid wash become the grunge symbols of the Y2K era.",
-  2010: "Skinny jeans were popular through the early 2000s and 2010s. Looser flare jeans have made a comeback in the current decade.",
+  1890: ["We begin our exploration of fashion", "trends in the late 1800s where we can see references", "of old timey styles like corduroy and balloon sleeves"],
+  1900: ["We first see polka-dots", "bell bottoms and shoulder pads gain popularity", "in the early 20th century"],
+  1910: ["The peplum style of top first gains", "popularity in the 1910s with a narrower silhouette and", "broader fit around the shoulders"],
+  1920: ["This was a time known for glamour and ornate details.", "Cutouts became more popular during this time period", "as more intricate detail was added to garments."],
+  1930: ["Leather jackets are the style symbol of the era", "as society begins to drawn fashion", "inspiration from film stars and celebrities"],
+  1940: ["Fabric shortages from WW2 played a huge", "role in the recycling of styles and a", "shift to using lesser fabric in the 40s"],
+  1950: ["The post war era marked a return to ultra", "feminine silhouettes with polka", "dots and higher waisted bottoms."],
+  1960: ["Miniskirts first came into style", "in the late 50s and 60s as a symbol for", "the societal shift occuring with the youth movement."],
+  1970: ["The 70's was a decade where tie-dye,", "bell-bottoms and fringe were popular reminiscent of the", "societal movements and youth culture of the era"],
+  1980: ["Shoulder pads became symbolic for", "women in the workplace demanding equality", "and power in their positions"],
+  1990: ["Platform shoes, specifically sneakers", "gain popularity and sneaker styles symbolize", "the hip-hop culture of the 90s era"],
+  2000: ["Low rise jeans and acid wash", "become the grunge symbols of the Y2K era."],
+  2010: ["Skinny jeans were popular through", "the early 2000s and 2010s. Looser flare jeans", "have made a comeback in the current decade."],
+  2020: ["The Y2K era is back."]
 };
 
 function legendDraw(onLegendClick, uniqueTrends) {
@@ -381,7 +382,7 @@ export default {
       })
       .attr("cy", height - 30)
       .attr("r", 10)
-      .style("fill", "white")
+      .attr("fill", "white")
       .attr("stroke", "black")
       .style("stroke-width", "2.5");
 
@@ -389,19 +390,32 @@ export default {
     var labels = svg
       .selectAll(".mylabels")
       .data(this.data.nodes)
-      .enter()
-      .append("text")
-      .attr("class", "mylabels")
-      .attr("x", 0)
-      .attr("y", 0)
-      .text(function (d) {
-        return d;
-      })
-      .style("text-anchor", "end")
-      .attr("transform", function (d) {
-        return "translate(" + x(d) + "," + (height - 15) + ")rotate(-90)";
-      })
-      .style("font-size", 20);
+      .join((enter) => {
+        const g = enter
+          .append("g")
+          .attr("class", "mylabels")
+          .attr("transform", function (d) {
+            return "translate(" + x(d) + "," + (height - 15) + ")rotate(0)";
+          });
+        g.append("rect").attr("width", 100).attr("height", 200).style("stroke", "5px").style("fill", "none");
+        g.append("text").attr("class","decade_Detail")
+          .attr("width", 100)
+          .attr("height", 200)
+          .attr("opacity", 0)
+          .attr("x", -100)
+          .attr("y", 10)
+          .selectAll("tspan").data(function(d) {return decadeDetail[d]}).join("tspan").text(e => e).attr("dy", 15).attr("x",-30)
+        g.append("text")
+          .attr("class", "decade_Id")
+          .attr("x", 40)
+          .attr("y", 20)
+          .text(function (d) {
+            return d;
+          })
+          .style("text-anchor", "end")
+          .style("font-size", 20);
+          return g
+      });
 
     //adding a legend
 
@@ -425,9 +439,9 @@ export default {
           .style("stroke-width", function (link_d) {
             return link_d.source === d || link_d.target === d ? 4 : 1;
           });
-        labels
+        labels.selectAll(".decade_Id")
           .style("font-size", function (label_d) {
-            return label_d === d ? 16 : 2;
+            return label_d === d ? 16 : 16;
           })
           .attr("y", function (label_d) {
             return label_d === d ? 10 : 0;
@@ -435,6 +449,9 @@ export default {
           .text(function (d) {
             return d;
           });
+      labels.selectAll(".decade_Detail").attr("opacity", function (label_d) {
+      return label_d === d ? 1 : 0;
+      })
       })
       .on("mouseout", function () {
         nodesDraw.style("opacity", 1);
@@ -442,59 +459,37 @@ export default {
           .style("fill", "none")
           .attr("stroke", function (d) {
             return colorLookup[d.trend] || "grey";
-            /*if (d.trend=='bell bottoms') {return '#59C3C3'}
-            else if (d.trend=='corduroy') {return '#8D6A9F'}
-            else if (d.trend=='cutouts') {return '#FFF21F1'}
-            else if (d.trend=='high waisted pants') {return '#B0FF92'}
-            else if (d.trend=='low rise jeans') {return '#D6FF79'}
-            else if (d.trend=='mini-skirt') {return '#B33F62'}
-            else if (d.trend=='off the shoulder') {return '0FA3B1'}
-            else if (d.trend=='plaid flannel shirt') {return '##6320EE'}
-            else if (d.trend=='shift dress'){return '#F7A072'}
-            else if (d.trend=='shoulder pads'){return '#FFF689'}
-            else if (d.trend=='tie-dye'){return '#48BEFF'}
-            else if (d.trend=='platform shoes'){return '#3DFAFF'}
-            else if (d.trend=='leather jacket'){return '#4A306D'}
-            else if (d.trend=='sequin'){return '#FF99C9'}
-            else if (d.trend=='peplum shirt'){return '#084887'}
-            else if (d.trend=='fringe detail'){return 'C0C999'}
-            else if (d.trend=='patchwork'){return '#2E5EAA'}
-            else if (d.trend=='polka dot'){return '#C3BEF7'}
-            else if (d.trend=='balloon sleeves'){return '#B30089'}
-            else if (d.trend=='acid wash'){return '#E55934'}
-            else {return 'grey'}*/
           })
           .style("stroke-width", "2.5");
-        labels
-          .selectAll(".mylabels")
+          labels.selectAll(".decade_Detail").attr("opacity",0)
+        /*labels
+          /*.selectAll(".mylabels")
           .data(this.data.nodes)
-          /*.append("rect")
-          .style("fill", "none")*/
+          .append("rect")
+          .style("fill", "none")
           //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
           .join((enter) => {
             const g = enter.append("g").attr("class", "mylabels");
-            g.append("rect");
-            g.attr("width", 100)
-            g.attr("height", 200)
+            g.append("rect").attr("width", 100).attr("height", 200);
             g.append("text")
-            g.attr("width", 100)
-            g.attr("height", 200) 
-            g.text(function (d) {
-            return decadeDetail[d.id];
-            })
-            g.style("font-size", 12)
-            g.style("text-anchor", "end")
-            g.attr("transform", function (d) {
-            return "translate(" + x(d) + "," + (height - 15) + ")rotate(0)";
-          })
-            return g;
-          })
-          /*.text(function (d) {
+              .attr("width", 100)
+              .attr("height", 200)
+              .text(function (d) {
+                return decadeDetail[d];
+              })
+              .style("font-size", 12)
+              .style("text-anchor", "end")
+              .attr("transform", function (d) {
+                return "translate(" + x(d) + "," + (height - 15) + ")rotate(0)";
+              });
+            //return g;
+          });*/
+        /*.text(function (d) {
             return decadeDetail[d];
           })*/
-          
-          //.attr("x", 100)
-          //.attry("y", 500);
+
+        //.attr("x", 100)
+        //.attry("y", 500);
       });
   },
   updated() {
@@ -550,29 +545,28 @@ export default {
         } else {
           return "white";
         }
-      }); 
+      });
 
-    svg.selectAll(".mylabels")
-          .data(this.data.nodes)
-          /*.append("rect")
-          .style("fill", "none")*/
-          //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
-          .join((enter) => {
-            const g = enter.append("g").attr("class", "mylabels");
-            g.append("rect");
-            g.attr("width", 100)
-            g.attr("height", 200)
-            g.append("text")
-            g.attr("width", 100)
-            g.attr("height", 200) 
-            g.text(function (d) {
+    /* svg
+      .selectAll(".mylabels")
+      .data(this.data.nodes)
+      .append("rect")
+          .style("fill", "none")
+      //.html('<div style="width: 150px;">' function (d) {return decadeDetail[d]}'</div>')
+      .join((enter) => {
+        const g = enter.append("g").attr("class", "mylabels");
+        g.append("rect").attr("width", 100).attr("height", 200);
+        g.append("text")
+          .attr("width", 100)
+          .attr("height", 200)
+          .text(function (d) {
             return decadeDetail[d.id];
-            })
-            g.style("font-size", 12)
-            g.style("text-anchor", "end")
-            return g;
-          })  
-    //.style("stroke-width", "3.5");
+          })
+          .style("font-size", 12)
+          .style("text-anchor", "end");
+        return g;
+      });
+    //.style("stroke-width", "3.5");*/
   },
 };
 </script>
@@ -610,5 +604,9 @@ p {
 #my_dataviz {
   /* width: 75%; */
   overflow-x: scroll;
+}
+
+.decade_Detail {
+  pointer-events: none;
 }
 </style>
