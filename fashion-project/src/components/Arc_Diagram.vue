@@ -18,7 +18,7 @@
       rise vs low rise jeans. Next take a look at various sleeve trends such as,
       balloon sleeves, cut-outs and off the shoulder. Hover over the varying
       decades to get a better understanding of the time period when particular
-      trends were popular.
+      trends were popular. Feel free to interact with and rebuild the piece in a way that caters to your own fashion interests!
     </p>
     <div class="flex-container">
       <div
@@ -249,7 +249,7 @@ export default {
   mounted() {
     legendDraw(this.onLegendClick, this.uniqueTrends);
     const that = this;
-    var margin = { top: 0, right: 15, bottom: 50, left: 15 },
+    var margin = { top: 0, right: 15, bottom: 50, left: 17 },
       width = 2560 - margin.left - margin.right,
       height = 920 - margin.top - margin.bottom;
     console.log("here");
