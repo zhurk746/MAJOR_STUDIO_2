@@ -23,6 +23,16 @@
 <li>Explore css/html/js design that would best supplement the topic</li>
 </ol>
 
+<h3>Project Abstract</h3>
+<p>
+Fashion and its History: Does it Repeat Itself? is a visualization that illustrates the popularity of different fashion styles and seeks to identify patterns in trend history. Information exchange in the contemporary world is constant and new fashion trends or patterns emerge and are influenced by a variety of sources. Fashion change over time cannot be explained by a particular theory, catalyst or cycle. Forecasting future trends is a complex process as drivers of change in fashion culture are vast and patterns in the fashion cycle are difficult to discern. This data visualization explores the popularity of past trends and aims to identify a pattern in a subset of styles that have been recycled throughout the years. 
+<br> 
+Data from the archives of Vogue, a globally celebrated and recognized fashion magazine, is collected over roughly 130 years for a subset of 20 iconic styles. The data visualization synthesizes the number of times a particular style appears in a Vogue magazine edit during a decade and illustrates the popularity of a style during that time period. Research of fashion history and theory as well as social, cultural and technological factors throughout this thesis builds on the visualization’s trend analysis with the hope of better understanding what drives changes in fashion culture. Research and visual analysis of trend patterns for this thesis is conducted with the goal of helping users better understand the fashion landscape and identify indicators that may be useful in the prediction of future fashion trends or recycled styles. 
+<br>
+	Speed of information on social media channels has introduced further complexities in data collection for fashion trend forecasting. Catalysts for change and the introduction of new trends are difficult to pinpoint. This thesis focuses on a subset of styles that have been recycled throughout the last 130 years in order to illustrate the influence of fashion change on society as well as the influence of cultural change on the fashion landscape. Fashion and its History: Does it repeat itself aims to identify answers to questions like: Are there patterns in the fashion cycle? Can we quantify or categorize these fashion patterns? What may have caused the popularity of these styles during a specific time period? The unique use of data visualization aggregates information regarding fashion change over time across several dimensions in a digestible fashion in an attempt to answer questions about trend patterns throughout human history.
+
+</p>
+
 <h3>Links </h3>
 [Historical Trends that redefined fashion--compile data](https://www.tlnint.com/keeping-up-with-trends-historical-events-that-redefined-the-face-of-fashion/)
 [Fashion by the Decade](https://www.whowhatwear.com/fashion-by-the-decade/slide16)
